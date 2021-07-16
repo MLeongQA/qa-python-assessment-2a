@@ -265,7 +265,6 @@ def nine(string1, string2):
 def ten(a, b):
     final_array = []
     times_factor = 0
-    product_factor = 0
     for i in range(b):
         temp_array = []
         product_factor = 0
