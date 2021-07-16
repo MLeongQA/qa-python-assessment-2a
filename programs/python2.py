@@ -29,8 +29,14 @@
     # <HINT>
     # How does a for loop iterate through a string?
 
+from random import randrange
+
+
 def one(string):
-    return ""
+    return_string = ""
+    for char in string:
+        return_string += char *3 
+    return return_string
 
     # <QUESTION 2>
 
@@ -48,7 +54,15 @@ def one(string):
     # Use your CLI to access the Python documentation and get help manipulating strings - help(range).
 
 def two(num):
-    return False
+    prime_number = True
+    number = num-1
+    while number > 1:
+        if (num/number)%1==0:
+            prime_number = False
+            break
+        else:
+            number -= 1
+    return prime_number
 
     # <QUESTION 3>
 
@@ -65,7 +79,7 @@ def two(num):
     # What happens if you multiply a string by a number?
 
 def three(a):
-    return 1
+    return a + int(str(a)*2)+int(str(a)*3)+int(str(a)*4)
 
     # <QUESTION 4>
 
@@ -94,8 +108,14 @@ def three(a):
     # How would you seperate a string into characters?
 
 def four(string1, string2):
-    return ""
+    list1 = list(string1)
+    list2 = list(string2)
+    final_string = ""
 
+    for count, char in enumerate(list1):
+        final_string += char + list2[count]
+
+    return final_string
     # <QUESTION 5>
 
     # Write a function to randomly generate a list with 5 even numbers between 100 and 200 inclusive.
@@ -111,7 +131,12 @@ def four(string1, string2):
     # The random module contains a function called randint.
 
 def five():
-    return []
+    from random import randint
+    rand_array = []
+    for x in range(5):
+        rand_array.append(randint(50,100)*2)
+    return rand_array
+
 
     # <QUESTION 6>
 
@@ -130,7 +155,10 @@ def five():
     # There are no hints for this question.
     
 def six(string):
-    return False
+    if (string.lower()).endswith("py"):
+        return True
+    else:
+        return False
 
     # <QUESTION 7>
 
@@ -154,8 +182,13 @@ def six(string):
     # Use the cli to access the documentation help(list.sort)
 
 def seven(a, b, c):
-    return False
-
+    number_list = sorted([a,b,c])
+    if number_list[1]-number_list[0] == number_list[2] - number_list[1]:
+        return True
+    else:
+        return False
+    
+print(seven(2,4,6))
     # <QUESTION 8>
 
     # Given a string and an integer, n, return a string that removes n letters from the 'middle' of the string.
