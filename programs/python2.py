@@ -29,9 +29,6 @@
     # <HINT>
     # How does a for loop iterate through a string?
 
-from random import randrange
-
-
 def one(string):
     return_string = ""
     for char in string:
@@ -204,7 +201,7 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    
+
     new_string = string
 
     if num == 1:
