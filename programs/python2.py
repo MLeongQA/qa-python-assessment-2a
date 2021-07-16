@@ -188,7 +188,6 @@ def seven(a, b, c):
     else:
         return False
     
-print(seven(2,4,6))
     # <QUESTION 8>
 
     # Given a string and an integer, n, return a string that removes n letters from the 'middle' of the string.
@@ -222,7 +221,21 @@ def eight(string, num):
     # There are no hints for this question.
 
 def nine(string1, string2):
-    return False
+    trip_condition = True
+    if len(string1) >= len(string2):
+        string_list = list(string1)
+        smaller = string2
+    else:
+        string_list = list(string2)
+        smaller = string1
+
+    for char in smaller:
+        if char not in string_list:
+            trip_condition = False
+        else:
+            string_list.remove(char)
+
+    return trip_condition
 
     # <QUESTION 10>
 
@@ -240,4 +253,15 @@ def nine(string1, string2):
     # Think about nesting for loops.
 
 def ten(a, b):
-    return []
+    final_array = []
+    times_factor = 0
+    product_factor = 0
+    for i in range(b):
+        temp_array = []
+        product_factor = 0
+        for i in range(a):
+            temp_array.append(0+product_factor)
+            product_factor += times_factor
+        times_factor += 1
+        final_array.append(temp_array)
+    return final_array
