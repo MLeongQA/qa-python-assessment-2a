@@ -204,7 +204,20 @@ def seven(a, b, c):
     # Use the cli to access the documentation help(str.replace)
 
 def eight(string, num):
-    return ""
+    
+    new_string = string
+
+    if num == 1:
+        mid = len(new_string)//2
+        remainder = (len(new_string)+1)%2
+        new_string = new_string[:mid-remainder]+new_string[mid+1:]
+        return new_string
+    else:
+        while len(string)-len(new_string)< num:
+            mid = len(new_string)//2
+            remainder = (len(new_string)+1)%2
+            new_string = new_string[:mid-remainder]+new_string[mid+1:]
+        return new_string
 
     # <QUESTION 9>
 
@@ -265,3 +278,4 @@ def ten(a, b):
         times_factor += 1
         final_array.append(temp_array)
     return final_array
+ 
